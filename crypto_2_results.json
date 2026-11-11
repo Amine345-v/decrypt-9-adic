@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "experiment": "Polynomial-Time Inversion and Decryption of Collatz PRGs",
+    "engine": "crypto_2_hensel_inversion.py",
+    "key_lengths": [
+      16,
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024
+    ],
+    "trials_per_length": 5,
+    "timestamp": "2026-11-11 00:17:41 UTC",
+    "system_properties": {
+      "trellis_width_mode_a": 1,
+      "trellis_width_alg2": 1,
+      "overall_decryption_success_rate": 1.0
+    }
+  },
+  "mode_a_switch_block_benchmarks": [
+    {
+      "M": 16,
+      "steps_2M": 32,
+      "mean_y_bitlength": 57.8,
+      "mean_inversion_ms": 0.0249,
+      "min_inversion_ms": 0.0181,
+      "max_inversion_ms": 0.0335,
+      "mean_decryption_ms": 0.0467,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "M": 32,
+      "steps_2M": 64,
+      "mean_y_bitlength": 106.8,
+      "mean_inversion_ms": 0.0655,
+      "min_inversion_ms": 0.0588,
+      "max_inversion_ms": 0.0698,
+      "mean_decryption_ms": 0.1008,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "M": 64,
+      "steps_2M": 128,
+      "mean_y_bitlength": 210.4,
+      "mean_inversion_ms": 0.0777,
+      "min_inversion_ms": 0.0741,
+      "max_inversion_ms": 0.0829,
+      "mean_decryption_ms": 0.1028,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "M": 128,
+      "steps_2M": 256,
+      "mean_y_bitlength": 412.2,
+      "mean_inversion_ms": 0.2048,
+      "min_inversion_ms": 0.1781,
+      "max_inversion_ms": 0.2301,
+      "mean_decryption_ms": 0.2385,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "M": 256,
+      "steps_2M": 512,
+      "mean_y_bitlength": 816.8,
+      "mean_inversion_ms": 0.6046,
+      "min_inversion_ms": 0.5151,
+      "max_inversion_ms": 0.7433,
+      "mean_decryption_ms": 0.6242,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "M": 512,
+      "steps_2M": 1024,
+      "mean_y_bitlength": 1629.0,
+      "mean_inversion_ms": 1.8538,
+      "min_inversion_ms": 1.6539,
+      "max_inversion_ms": 2.2945,
+      "mean_decryption_ms": 2.021,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "M": 1024,
+      "steps_2M": 2048,
+      "mean_y_bitlength": 3252.6,
+      "mean_inversion_ms": 7.2664,
+      "min_inversion_ms": 6.4517,
+      "max_inversion_ms": 7.7783,
+      "mean_decryption_ms": 7.4331,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    }
+  ],
+  "algorithm2_binary_alphabet_benchmarks": [
+    {
+      "m": 16,
+      "mean_inversion_ms": 0.0603,
+      "min_inversion_ms": 0.0527,
+      "max_inversion_ms": 0.0711,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 32,
+      "mean_inversion_ms": 0.0528,
+      "min_inversion_ms": 0.0369,
+      "max_inversion_ms": 0.0814,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 64,
+      "mean_inversion_ms": 0.0679,
+      "min_inversion_ms": 0.0649,
+      "max_inversion_ms": 0.0712,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 128,
+      "mean_inversion_ms": 0.2282,
+      "min_inversion_ms": 0.221,
+      "max_inversion_ms": 0.2324,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 256,
+      "mean_inversion_ms": 0.2614,
+      "min_inversion_ms": 0.2483,
+      "max_inversion_ms": 0.2741,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 512,
+      "mean_inversion_ms": 0.7123,
+      "min_inversion_ms": 0.6475,
+      "max_inversion_ms": 0.7921,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 1024,
+      "mean_inversion_ms": 2.6066,
+      "min_inversion_ms": 2.0909,
+      "max_inversion_ms": 3.0426,
+      "max_trellis_width": 1,
+      "success_rate_percent": 100.0
+    }
+  ],
+  "algorithm3_dyadic_cylinder_benchmarks": [
+    {
+      "m": 16,
+      "mean_recovery_ms": 0.0292,
+      "min_recovery_ms": 0.0228,
+      "max_recovery_ms": 0.0388,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 32,
+      "mean_recovery_ms": 0.0253,
+      "min_recovery_ms": 0.0235,
+      "max_recovery_ms": 0.0276,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 64,
+      "mean_recovery_ms": 0.0555,
+      "min_recovery_ms": 0.051,
+      "max_recovery_ms": 0.0662,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 128,
+      "mean_recovery_ms": 0.2198,
+      "min_recovery_ms": 0.2025,
+      "max_recovery_ms": 0.2516,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 256,
+      "mean_recovery_ms": 0.2485,
+      "min_recovery_ms": 0.2236,
+      "max_recovery_ms": 0.3171,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 512,
+      "mean_recovery_ms": 0.5614,
+      "min_recovery_ms": 0.4585,
+      "max_recovery_ms": 0.7053,
+      "success_rate_percent": 100.0
+    },
+    {
+      "m": 1024,
+      "mean_recovery_ms": 1.2239,
+      "min_recovery_ms": 0.9744,
+      "max_recovery_ms": 1.7384,
+      "success_rate_percent": 100.0
+    }
+  ],
+  "polynomial_scaling_fits": {
+    "mode_a_scaling": {
+      "model": "T(M) = c * M^alpha",
+      "alpha": 1.3276,
+      "c_constant": 0.000476,
+      "r_squared": 0.9699,
+      "complexity_class": "O(M^{1.33})"
+    },
+    "alg2_scaling": {
+      "model": "T(m) = c * m^alpha",
+      "alpha": 0.9198,
+      "c_constant": 0.002522,
+      "r_squared": 0.9021,
+      "complexity_class": "O(m^{0.92})"
+    },
+    "alg3_scaling": {
+      "model": "T(m) = c * m^alpha",
+      "alpha": 0.9741,
+      "c_constant": 0.001309,
+      "r_squared": 0.9539,
+      "complexity_class": "O(m^{0.97})"
+    }
+  }
+}
