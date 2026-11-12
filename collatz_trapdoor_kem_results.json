@@ -1,0 +1,150 @@
+{
+  "title": "Collatz Trapdoor Key Encapsulation Mechanism (Collatz-KEM) with Standard Hashing DEM",
+  "timestamp_utc": "2026-11-12T00:33:26Z",
+  "total_test_duration_sec": 0.0282,
+  "cryptographic_architecture": {
+    "kem_primitive": "Collatz 9-Adic Hensel Peeling Trapdoor Inverter",
+    "asymmetric_complexity": "Forward: O(M) Collatz steps; Trapdoor Inversion: O(M^2) with trellis width 1",
+    "message_encryption_principle": "Payloads are strictly encrypted via standard symmetric AEAD; Collatz is used solely to decapsulate shared secret seed n_0",
+    "supported_standard_hashes": [
+      "HKDF-SHA256 (RFC 5869)",
+      "SHA-256 (FIPS 180-4)",
+      "SHA3-256 (FIPS 202)"
+    ],
+    "dem_aead_schemes": [
+      "AES-256-GCM (NIST SP 800-38D)",
+      "HMAC-SHA256-AEAD"
+    ]
+  },
+  "standard_hash_matrix": [
+    {
+      "hash_mode": "sha256",
+      "security_parameter_M": 64,
+      "dem_scheme": "AES-256-GCM",
+      "plaintext_sample": "Collatz-KEM Standard Hash Integrity Test Payload",
+      "encapsulated_y_preview": "0xb3f7de4b8501931ebee4a6566f84fa...",
+      "decapsulate_time_ms": 0.8651,
+      "dem_decrypt_time_ms": 0.0558,
+      "status": "PASSED"
+    },
+    {
+      "hash_mode": "sha3_256",
+      "security_parameter_M": 64,
+      "dem_scheme": "AES-256-GCM",
+      "plaintext_sample": "Collatz-KEM Standard Hash Integrity Test Payload",
+      "encapsulated_y_preview": "0x4827945b6d6de2dc2307ad9ad6280b...",
+      "decapsulate_time_ms": 0.2718,
+      "dem_decrypt_time_ms": 0.0183,
+      "status": "PASSED"
+    },
+    {
+      "hash_mode": "hkdf_sha256",
+      "security_parameter_M": 64,
+      "dem_scheme": "AES-256-GCM",
+      "plaintext_sample": "Collatz-KEM Standard Hash Integrity Test Payload",
+      "encapsulated_y_preview": "0x1e517b923557e918711815ad4f2230...",
+      "decapsulate_time_ms": 0.261,
+      "dem_decrypt_time_ms": 0.0132,
+      "status": "PASSED"
+    }
+  ],
+  "payload_type_matrix": [
+    {
+      "payload_type": "UTF-8 Text String",
+      "payload_size_bytes": 94,
+      "ciphertext_len_bytes": 94,
+      "tag_hex": "8d28106a4c2a52bb0fd9cbb9492c49da",
+      "encapsulate_kem_time_ms": 0.2373,
+      "decapsulate_trapdoor_time_ms": 0.4171,
+      "verified_exact_match": true
+    },
+    {
+      "payload_type": "Structured JSON Record",
+      "payload_size_bytes": 458,
+      "ciphertext_len_bytes": 458,
+      "tag_hex": "95d0c0c50630ee489a62e699bfcac98f",
+      "encapsulate_kem_time_ms": 0.4912,
+      "decapsulate_trapdoor_time_ms": 0.4577,
+      "verified_exact_match": true
+    },
+    {
+      "payload_type": "Raw Binary Key Buffer (512 bytes)",
+      "payload_size_bytes": 512,
+      "ciphertext_len_bytes": 512,
+      "tag_hex": "df83df65120490540b3012adb1b3cae4",
+      "encapsulate_kem_time_ms": 0.4108,
+      "decapsulate_trapdoor_time_ms": 0.4395,
+      "verified_exact_match": true
+    }
+  ],
+  "security_scaling_benchmarks": [
+    {
+      "M_bits": 16,
+      "collatz_steps": 32,
+      "seed_n0_bits": 193,
+      "terminal_y_bits": 180,
+      "encapsulate_and_encrypt_ms": 0.22,
+      "decapsulate_trapdoor_ms": 0.0835,
+      "total_decryption_pipeline_ms": 0.116,
+      "hensel_peeling_throughput_layers_per_sec": 191616.8
+    },
+    {
+      "M_bits": 32,
+      "collatz_steps": 64,
+      "seed_n0_bits": 256,
+      "terminal_y_bits": 229,
+      "encapsulate_and_encrypt_ms": 0.159,
+      "decapsulate_trapdoor_ms": 0.1225,
+      "total_decryption_pipeline_ms": 0.149,
+      "hensel_peeling_throughput_layers_per_sec": 261224.5
+    },
+    {
+      "M_bits": 64,
+      "collatz_steps": 128,
+      "seed_n0_bits": 382,
+      "terminal_y_bits": 329,
+      "encapsulate_and_encrypt_ms": 0.292,
+      "decapsulate_trapdoor_ms": 0.3528,
+      "total_decryption_pipeline_ms": 0.404,
+      "hensel_peeling_throughput_layers_per_sec": 181405.9
+    },
+    {
+      "M_bits": 128,
+      "collatz_steps": 256,
+      "seed_n0_bits": 640,
+      "terminal_y_bits": 534,
+      "encapsulate_and_encrypt_ms": 0.736,
+      "decapsulate_trapdoor_ms": 1.2749,
+      "total_decryption_pipeline_ms": 1.379,
+      "hensel_peeling_throughput_layers_per_sec": 100400.0
+    },
+    {
+      "M_bits": 256,
+      "collatz_steps": 512,
+      "seed_n0_bits": 1153,
+      "terminal_y_bits": 941,
+      "encapsulate_and_encrypt_ms": 1.648,
+      "decapsulate_trapdoor_ms": 2.4862,
+      "total_decryption_pipeline_ms": 2.553,
+      "hensel_peeling_throughput_layers_per_sec": 102968.4
+    }
+  ],
+  "tamper_resistance_results": [
+    {
+      "test": "Encapsulated Key y Bit-Flip",
+      "tamper_detected_and_rejected": true
+    },
+    {
+      "test": "DEM Ciphertext C Bit-Flip",
+      "tamper_detected_and_rejected": true
+    },
+    {
+      "test": "Associated Data AAD Forgery",
+      "tamper_detected_and_rejected": true
+    },
+    {
+      "test": "KDF Salt Corruption",
+      "tamper_detected_and_rejected": true
+    }
+  ]
+}

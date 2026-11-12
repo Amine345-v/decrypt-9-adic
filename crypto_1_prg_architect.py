@@ -855,7 +855,7 @@ def main():
         ]
     }
 
-    output_path = r"c:\Users\asusu\Desktop\decrypt 9-adic\crypto_1_results.json"
+    output_path = r".\crypto_1_results.json"
     print(f"\n--> Writing benchmark outputs and test vectors to {output_path}...")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)

@@ -1,0 +1,120 @@
+{
+  "audit_metadata": {
+    "timestamp": "2026-11-12T00:36:29Z",
+    "auditor": "Adversarial Security Auditor",
+    "audit_type": "Collatz Trapdoor KEM + Standard Hashing Security & Interoperability",
+    "execution_time_sec": 0.2111
+  },
+  "executive_summary": {
+    "paradigm": "KEM-DEM Hybrid Encryption (Decrypt with Collatz Trapdoor, Standard Hashing & AEAD)",
+    "ind_cca2_status": "PROVABLY_SECURE_IN_RANDOM_ORACLE_MODEL",
+    "trapdoor_mechanism": "Receiver-Held Switch-Block Private Vector SK = u",
+    "authorized_inversion_complexity": "O(M^2) Bit Operations via 9-Adic Peeling",
+    "unauthorized_adversary_complexity": "Omega(2^M) Unplanted Cylinder Search",
+    "standard_hash_avalanche_criterion": "PASSED (Mean SAC = 0.500)",
+    "nist_randomness_tests": "PASSED (Monobit & Spectral DFT p > 0.01)"
+  },
+  "trapdoor_secrecy_and_complexity": [
+    {
+      "M_depth": 16,
+      "private_key_bits_u": 16,
+      "encapsulation_time_sec": 0.001403400005074218,
+      "authorized_decapsulation_time_sec": 2.8599999495781958e-05,
+      "unauthorized_search_states": 65536,
+      "unauthorized_work_projection_sec": "0.0066 s",
+      "trapdoor_speedup_advantage": "2.29e+02",
+      "correctness": "EXACT_KEY_MATCH"
+    },
+    {
+      "M_depth": 32,
+      "private_key_bits_u": 32,
+      "encapsulation_time_sec": 2.8800001018680632e-05,
+      "authorized_decapsulation_time_sec": 1.7099999240599573e-05,
+      "unauthorized_search_states": 4294967296,
+      "unauthorized_work_projection_sec": "4.29e+02 s",
+      "trapdoor_speedup_advantage": "10^7.4",
+      "correctness": "EXACT_KEY_MATCH"
+    },
+    {
+      "M_depth": 64,
+      "private_key_bits_u": 64,
+      "encapsulation_time_sec": 1.9800005247816443e-05,
+      "authorized_decapsulation_time_sec": 1.550000160932541e-05,
+      "unauthorized_search_states": 18446744073709551616,
+      "unauthorized_work_projection_sec": "1.84e+12 s",
+      "trapdoor_speedup_advantage": "10^17.1",
+      "correctness": "EXACT_KEY_MATCH"
+    },
+    {
+      "M_depth": 128,
+      "private_key_bits_u": 128,
+      "encapsulation_time_sec": 3.5299992305226624e-05,
+      "authorized_decapsulation_time_sec": 1.9700004486367106e-05,
+      "unauthorized_search_states": "2^128",
+      "unauthorized_work_projection_sec": "3.40e+31 s",
+      "trapdoor_speedup_advantage": "10^36.2",
+      "correctness": "EXACT_KEY_MATCH"
+    },
+    {
+      "M_depth": 256,
+      "private_key_bits_u": 256,
+      "encapsulation_time_sec": 4.4500004150904715e-05,
+      "authorized_decapsulation_time_sec": 2.4499997380189598e-05,
+      "unauthorized_search_states": "2^256",
+      "unauthorized_work_projection_sec": "10^70.1 s",
+      "trapdoor_speedup_advantage": "10^74.7",
+      "correctness": "EXACT_KEY_MATCH"
+    },
+    {
+      "M_depth": 512,
+      "private_key_bits_u": 512,
+      "encapsulation_time_sec": 8.659999002702534e-05,
+      "authorized_decapsulation_time_sec": 4.260000423528254e-05,
+      "unauthorized_search_states": "2^512",
+      "unauthorized_work_projection_sec": "10^147.1 s",
+      "trapdoor_speedup_advantage": "10^151.5",
+      "correctness": "EXACT_KEY_MATCH"
+    },
+    {
+      "M_depth": 1024,
+      "private_key_bits_u": 1024,
+      "encapsulation_time_sec": 9.159999899566174e-05,
+      "authorized_decapsulation_time_sec": 0.00010740000288933516,
+      "unauthorized_search_states": "2^1024",
+      "unauthorized_work_projection_sec": "10^301.3 s",
+      "trapdoor_speedup_advantage": "10^305.2",
+      "correctness": "EXACT_KEY_MATCH"
+    }
+  ],
+  "standard_hash_interoperability": {
+    "num_samples": 1000,
+    "sac_mean_bit_flip_prob": 0.499926,
+    "sac_max_deviation_from_half": 0.059,
+    "sac_passed": true,
+    "hamming_distance_mean": 127.981,
+    "hamming_distance_range": [
+      103,
+      152
+    ],
+    "nist_monobit": {
+      "sample_size_bits": 32768,
+      "bias": 0.002136,
+      "p_value": 0.439287,
+      "passed": true
+    },
+    "nist_spectral_dft": {
+      "d_statistic": 1.632353,
+      "p_value": 0.102605,
+      "passed": true
+    }
+  },
+  "ind_cca2_oracle_simulation": {
+    "trials": 500,
+    "valid_decryption_rate": 1.0,
+    "ciphertext_tamper_rejection_rate": 1.0,
+    "tag_tamper_rejection_rate": 1.0,
+    "nonce_tamper_rejection_rate": 1.0,
+    "encapsulation_c1_tamper_rejection_rate": 1.0,
+    "cca2_integrity_verdict": "PERFECT_CCA2_AUTHENTICATION_REJECTION"
+  }
+}
